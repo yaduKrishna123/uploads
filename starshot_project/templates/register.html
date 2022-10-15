@@ -1,0 +1,62 @@
+{% extends  'base.html' %}
+{% block content %}
+
+
+
+<section class="h-100 h-custom" style="background-color: #8fc4b7;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6">
+        <div class="card rounded-3">
+          <img src="https://www.epo.org/about-us/annual-reports-statistics/statistics/2020/digital-technologies/TopVisual.jpg?lenya.module=svg&height=283&width=761"
+            class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+            alt="Sample photo">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Registration Info</h3>
+
+            <form class="px-md-2" action="" method="post">
+                {% csrf_token %}
+
+              <div class="form-outline mb-4">
+                <input type="text" name="username"   class="form-control" />
+                <label class="form-label" for="form3Example1q">User Name</label>
+              </div>
+              <div class="form-outline mb-4">
+                <input type="password"  name="password" class="form-control" />
+                <label class="form-label" for="form3Example1q">Password</label>
+              </div>
+               <div class="form-outline mb-4">
+                <input type="password" name="password1"  class="form-control" />
+                <label class="form-label" for="form3Example1q">Confirm Password</label>
+              </div>
+
+                <h5> Already have an account click here    <a type="button" class="btn btn-success" style="cursor:pointer;font-size:14px;" href="/login"> Login Here</a></h5>
+
+
+
+
+
+
+
+
+                </div>
+              </div>
+
+
+
+
+
+              <button type="submit" class="btn btn-success btn-lg mb-1">Submit</button>
+
+            </form>
+         {% for msg in messages %}
+                <h2>{{msg}}</h2>
+                {% endfor %}
+
+          </div>
+        </div>
+  </div>
+
+
+</section>
+{% endblock %}
